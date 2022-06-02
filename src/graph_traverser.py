@@ -36,7 +36,7 @@ class GraphTraverser:
                     node = queue.popleft()
                     query = self.NEIGHBOR_QUERY.format(node)
                     neighbors = self._get_neighbor_list_from_path(
-                        self.connector(query))
+                        self.connector.query(query))
                     for neighbor in neighbors:
                         if neighbor not in entity:
                             entity_result[neighbor] = k
